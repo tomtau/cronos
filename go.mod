@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/armon/go-metrics v0.3.9
 	github.com/cosmos/cosmos-sdk v0.43.0
-	github.com/cosmos/ibc-go v1.0.0
+	github.com/cosmos/ibc-go v1.0.1
 	github.com/ethereum/go-ethereum v1.10.3
 	github.com/gogo/protobuf v1.3.3
 	github.com/google/go-cmp v0.5.6 // indirect
@@ -17,7 +17,7 @@ require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
 	github.com/tendermint/spm v0.0.0-20210524110815-6d7452d2dc4a
-	github.com/tendermint/tendermint v0.34.11
+	github.com/tendermint/tendermint v0.34.12
 	github.com/tendermint/tm-db v0.6.4
 	github.com/tharsis/ethermint v0.4.2-0.20210817172937-b8fc58a75c33
 	google.golang.org/genproto v0.0.0-20210816143620-e15ff196659d
@@ -31,3 +31,6 @@ replace github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alp
 
 // TODO: fix keyring upstream
 replace github.com/99designs/keyring => github.com/crypto-org-chain/keyring v1.1.6-fixes
+
+// TODO: remove when middleware will be implemented
+replace github.com/cosmos/ibc-go => github.com/crypto-org-chain/ibc-go v1.0.1-hooks
