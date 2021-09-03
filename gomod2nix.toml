@@ -942,12 +942,13 @@
     sha256 = "0cvgzjfbxhrada3h6lmcc9pvjjsbi3hz84cxj4xfjglddsm7virj"
 
 ["github.com/cosmos/ibc-go"]
-  sumVersion = "v1.0.0"
+  sumVersion = "v1.0.1"
+  vendorPath = "github.com/crypto-org-chain/ibc-go"
   ["github.com/cosmos/ibc-go".fetch]
     type = "git"
-    url = "https://github.com/cosmos/ibc-go"
-    rev = "e9f1dc2a4f8631749c72e48957848cab3eb10762"
-    sha256 = "1n0n5wvsqf9zy5dq7sgi96s8invvicdc14dkj90gri2a1djdcdai"
+    url = "https://github.com/crypto-org-chain/ibc-go"
+    rev = "446797b77958996bf1f1d15205cb75a4dbe1f3fa"
+    sha256 = "1vyjk79c0hjigpjamc2xibgjlmrljrd1wpx2lj52j5biff46z5hk"
 
 ["github.com/cosmos/ledger-cosmos-go"]
   sumVersion = "v0.11.1"
@@ -3557,12 +3558,12 @@
     sha256 = "078a0zl6mpl27zvw6b0vvszbvzg6w4m14flzg375gp812wp8rw33"
 
 ["github.com/tendermint/tendermint"]
-  sumVersion = "v0.34.11"
+  sumVersion = "v0.34.12"
   ["github.com/tendermint/tendermint".fetch]
     type = "git"
     url = "https://github.com/tendermint/tendermint"
-    rev = "c2908ef785bb5ca6e015910368e4b7a32821b9ff"
-    sha256 = "0x9hf09qqdjf77fwk8sdc1dzr7akndwbpylnhi6aaihg4an0aqvp"
+    rev = "d030cddca01c0c3ff0ce41e051e123cdc9872a4e"
+    sha256 = "01nm9s3r00aav5j44adam3aif9mfr8fhvg4075yz4sf8n4938488"
 
 ["github.com/tendermint/tm-db"]
   sumVersion = "v0.6.4"
