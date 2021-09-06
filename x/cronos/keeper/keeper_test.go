@@ -1,6 +1,7 @@
 package keeper_test
 
 import (
+	evmtypes "github.com/tharsis/ethermint/x/evm/types"
 	"testing"
 	"time"
 
@@ -31,6 +32,9 @@ type KeeperTestSuite struct {
 
 	ctx sdk.Context
 	app *app.App
+
+	// EVM helpers
+	evmParam evmtypes.Params
 }
 
 func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
@@ -87,6 +91,8 @@ func (suite *KeeperTestSuite) DoSetupTest(t require.TestingT) {
 	err = suite.app.StakingKeeper.SetValidatorByConsAddr(suite.ctx, validator)
 	require.NoError(t, err)
 	suite.app.StakingKeeper.SetValidator(suite.ctx, validator)
+
+	suite.evmParam = suite.app.EvmKeeper.GetParams(suite.ctx)
 }
 
 func (suite *KeeperTestSuite) SetupTest() {
@@ -103,4 +109,16 @@ func (suite *KeeperTestSuite) MintCoins(address sdk.AccAddress, coins sdk.Coins)
 		return err
 	}
 	return nil
+}
+
+func (suite *KeeperTestSuite) MintCoinsToModule(module string, coins sdk.Coins) error {
+	err := suite.app.BankKeeper.MintCoins(suite.ctx, module, coins)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (suite *KeeperTestSuite) GetBalance(address sdk.AccAddress, denom string) sdk.Coin {
+	return suite.app.BankKeeper.GetBalance(suite.ctx, address, denom)
 }
